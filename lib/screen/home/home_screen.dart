@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:walletapp/widget/floating_button/floating_button.dart';
+import '../../widget/floating_button/floating_button.dart';
 
 
 class HomeScreen extends StatefulWidget {
