@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:walletapp/screen/home/home_screen.dart';
+import 'package:walletapp/screen/login/login.dart';
 import 'package:walletapp/screen/post/post.dart';
 import 'package:walletapp/screen/post/video.dart';
 import 'package:walletapp/screen/products/products.dart';
@@ -9,6 +10,8 @@ class RouteGenerator {
     switch (settings.name){
       case'/':
         return MaterialPageRoute(builder: (_)=>const HomeScreen());
+      case '/login':
+        return MaterialPageRoute(builder: (_)=>const LoginScreen());
       case'/post':
         return MaterialPageRoute(builder: (_)=>const PostScreen());
       case'/video':
@@ -32,3 +35,4 @@ class RouteGenerator {
     });
   }
 }
+
