@@ -10,7 +10,21 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
-    return  Scaffold();
+    return  Scaffold(
+      appBar: _buildAppBar(),
+      body: _buildBody(),
+    );
   }
-
+_buildAppBar(){
+    return AppBar(
+      title: const Text('Login'),
+    );
+}
+  _buildBody(){
+    return Center(
+      child: ElevatedButton.icon(onPressed: (){
+        Navigator.pushNamed(context, '/home');
+      }, icon: const Icon(Icons.person), label: const Text('Submit')),
+    );
+  }
 }

@@ -9,9 +9,9 @@ class RouteGenerator {
   static Route<dynamic>generateRoute(RouteSettings settings){
     switch (settings.name){
       case'/':
-        return MaterialPageRoute(builder: (_)=>const HomeScreen());
-      case '/login':
         return MaterialPageRoute(builder: (_)=>const LoginScreen());
+      case '/home':
+        return MaterialPageRoute(builder: (_)=>const HomeScreen());
       case'/post':
         return MaterialPageRoute(builder: (_)=>const PostScreen());
       case'/video':
