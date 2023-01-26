@@ -35,7 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 border: OutlineInputBorder(),
                 label: Text('Enter Title ')
               ),
-            )
+            ),
 
             // Image.file(file)
           ],
