@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:walletapp/utils/utils.dart';
+import 'package:walletapp/widget/custom_button.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -10,11 +11,21 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   ValueNotifier<bool> obsecurePassword = ValueNotifier<bool>(true);
-  TextEditingController emailController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
 
   FocusNode emailFocusNode = FocusNode();
   FocusNode passwordFocusNode = FocusNode();
+
+  @override
+  void dispose(){
+    super.dispose();
+    _emailController.dispose();
+    _passwordController.dispose();
+
+    emailFocusNode.dispose();
+
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +51,7 @@ class _LoginScreenState extends State<LoginScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               TextFormField(
-                controller: emailController,
+                controller: _emailController,
                 keyboardType: TextInputType.emailAddress,
                 decoration: const InputDecoration(
                   prefixIcon: Icon(Icons.email),
@@ -57,7 +68,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   builder: (context, value, child ){
                     return TextFormField(
                       obscureText: obsecurePassword.value,
-                      controller: passwordController,
+                      controller: _passwordController,
                       decoration:  InputDecoration(
                           prefixIcon: const Icon(Icons.lock),
                           suffixIcon: IconButton(
@@ -72,15 +83,20 @@ class _LoginScreenState extends State<LoginScreen> {
                     );
                   }),
 
-               SizedBox(height: height * 0.1,),
-              ElevatedButton.icon(
-                  onPressed: () {
-                    Utils.snackBar('No Internet connection', context);
-                    Utils.flushBarErrorMessage("No Internet connection",  context);
-                    Navigator.pushNamed(context, '/home');
-                  },
-                  icon: const Icon(Icons.person),
-                  label: const Text('Submit')),
+               SizedBox(height: height * 0.058,),
+                CustomButton(title: 'Submit', onPress: (){
+                  if (_emailController.text.isEmpty){
+                    Utils.snackBar('Plz Enter Email', context);
+                    Utils.flushBarErrorMessage("Plz Enter Email", context);
+                  }else if(_passwordController.text.isEmpty) {
+                    Utils.flushBarErrorMessage("Plz Enter Password", context);
+                  }else if(_passwordController.text.length < 4) {
+                    Utils.flushBarErrorMessage("Plz Enter 4 Digit Password", context);
+                  }else {
+                     Navigator.pushNamed(context, '/home');
+                  }
+                }, icon: Icons.person)
+
             ],
           ),
         ),

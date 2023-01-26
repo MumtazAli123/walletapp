@@ -3,6 +3,7 @@ import 'package:another_flushbar/flushbar_route.dart';
 import 'package:flutter/material.dart';
 
 class Utils {
+  static const Color buttonColor = Colors.green;
   static void focusChange(
       BuildContext context, FocusNode current, FocusNode nextFocus) {
     current.unfocus();

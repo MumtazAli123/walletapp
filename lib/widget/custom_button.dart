@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:walletapp/utils/utils.dart';
 
 class CustomButton extends StatelessWidget {
   final String title;
@@ -15,11 +16,14 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: 350,
+    return Container(
+      width: 300,
       height: 40,
+      color: Utils.buttonColor,
       child: ElevatedButton.icon(
-          onPressed: onPress, icon: Icon(icon), label: Text(title)),
+          onPressed: onPress,
+          icon: Icon(icon, size: 30),
+          label: loading ? const CircleAvatar(): Text(title, style: const TextStyle(fontSize: 20),)),
     );
   }
 }
