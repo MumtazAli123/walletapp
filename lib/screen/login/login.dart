@@ -104,9 +104,18 @@ class _LoginScreenState extends State<LoginScreen> {
                       "password": _passwordController.text.toString(),
                     };
                     authViewModel.loginApi(data, context);
-
                   }
-                }, icon: Icons.person)
+                }, icon: Icons.person),
+              SizedBox(height: height * 0.04,),
+              Row(
+                children:  [
+                  const Text('Before not register ? '),
+                  const Spacer(),
+                  TextButton(onPressed: (){
+                    Navigator.pushNamed(context, '/signup');
+                  }, child: const Text('Register now')),
+                ],
+              ),
 
             ],
           ),

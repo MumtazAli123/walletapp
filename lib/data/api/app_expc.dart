@@ -1,5 +1,7 @@
 class AppException implements Exception {
+  // ignore: prefer_typing_uninitialized_variables
   final _message;
+  // ignore: prefer_typing_uninitialized_variables
   final _perfix;
   AppException(this._message, this._perfix, );
   @override

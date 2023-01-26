@@ -9,8 +9,16 @@ class AuthViewModels with ChangeNotifier {
   bool _loading = false;
   bool get loading => _loading;
 
+  late bool _signupLoading = false;
+  bool get signupLoading => _signupLoading;
+
   setLoading(bool value){
     _loading = value;
+    notifyListeners();
+  }
+
+  setSignupLoading(bool value){
+    _signupLoading = value;
     notifyListeners();
   }
 
@@ -27,7 +35,26 @@ class AuthViewModels with ChangeNotifier {
     }).onError((error, stackTrace){
       setLoading(false);
       if (kDebugMode) {
-        Utils.flushBarErrorMessage('No internet', context);
+        Utils.flushBarErrorMessage('Email or password wrong', context);
+        print(error.toString());
+      }
+
+    });
+  }
+  Future<void> registerApi (dynamic data, BuildContext context)async{
+    setSignupLoading(true);
+    _myRepo.registerApi(data).then((value){
+      setSignupLoading(false);
+      Utils.snackBar("Register Successfully", context);
+      Navigator.pushNamed(context, '/home');
+      if (kDebugMode) {
+        print(value.toString());
+      }
+
+    }).onError((error, stackTrace){
+      setSignupLoading(false);
+      if (kDebugMode) {
+        Utils.flushBarErrorMessage(error.toString(), context);
         print(error.toString());
       }
 

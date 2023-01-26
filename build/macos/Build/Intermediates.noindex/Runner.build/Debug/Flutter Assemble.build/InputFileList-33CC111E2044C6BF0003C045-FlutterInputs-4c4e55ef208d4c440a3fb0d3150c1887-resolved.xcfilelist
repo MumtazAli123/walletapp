@@ -1,4 +1,6 @@
 /Users/alisindhi/.pub-cache/hosted/pub.dev/another_flushbar-1.12.29/LICENSE
+/Users/alisindhi/.pub-cache/hosted/pub.dev/another_flushbar-1.12.29/lib/flushbar.dart
+/Users/alisindhi/.pub-cache/hosted/pub.dev/another_flushbar-1.12.29/lib/flushbar_route.dart
 /Users/alisindhi/.pub-cache/hosted/pub.dev/async-2.10.0/LICENSE
 /Users/alisindhi/.pub-cache/hosted/pub.dev/boolean_selector-2.1.1/LICENSE
 /Users/alisindhi/.pub-cache/hosted/pub.dev/characters-1.2.1/LICENSE
@@ -813,13 +815,16 @@
 /Users/alisindhi/Documents/flutterDev/sdk/flutter/packages/flutter_tools/lib/src/build_system/targets/common.dart
 /Users/alisindhi/Documents/flutterDev/sdk/flutter/packages/flutter_tools/lib/src/build_system/targets/icon_tree_shaker.dart
 /Users/alisindhi/Documents/flutterDev/sdk/flutter/packages/flutter_tools/lib/src/build_system/targets/macos.dart
+/Users/alisindhi/StudioProjects/walletapp/DOES_NOT_EXIST_RERUN_FOR_WILDCARD117244094
 /Users/alisindhi/StudioProjects/walletapp/lib/constants/provider/theme_provider.dart
 /Users/alisindhi/StudioProjects/walletapp/lib/main.dart
 /Users/alisindhi/StudioProjects/walletapp/lib/route/route.dart
 /Users/alisindhi/StudioProjects/walletapp/lib/screen/home/home_screen.dart
+/Users/alisindhi/StudioProjects/walletapp/lib/screen/login/login.dart
 /Users/alisindhi/StudioProjects/walletapp/lib/screen/post/post.dart
 /Users/alisindhi/StudioProjects/walletapp/lib/screen/post/video.dart
 /Users/alisindhi/StudioProjects/walletapp/lib/screen/products/products.dart
+/Users/alisindhi/StudioProjects/walletapp/lib/utils/utils.dart
 /Users/alisindhi/StudioProjects/walletapp/lib/widget/floating_button/floating_button.dart
 /Users/alisindhi/StudioProjects/walletapp/lib/widget/popup/show_dialog.dart
 /Users/alisindhi/StudioProjects/walletapp/pubspec.yaml
