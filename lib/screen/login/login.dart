@@ -18,6 +18,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: _buildAppBar(),
       body: _buildBody(),
@@ -31,6 +32,7 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   _buildBody() {
+    final height = MediaQuery.of(context).size.height * 1;
     return SafeArea(
       child: Center(
         child: SizedBox(width: 380,
@@ -56,16 +58,21 @@ class _LoginScreenState extends State<LoginScreen> {
                     return TextFormField(
                       obscureText: obsecurePassword.value,
                       controller: passwordController,
-                      decoration: const InputDecoration(
-                          prefixIcon: Icon(Icons.lock),
-                          suffixIcon: Icon(Icons.visibility),
-                          border: OutlineInputBorder(),
-                          label: Text('Enter Password ')
+                      decoration:  InputDecoration(
+                          prefixIcon: const Icon(Icons.lock),
+                          suffixIcon: IconButton(
+                            onPressed: (){
+                              obsecurePassword.value =!obsecurePassword.value;
+                            },icon:  Icon(obsecurePassword.value?
+                          Icons.visibility_off_outlined : Icons.visibility),
+                          ),
+                          border: const OutlineInputBorder(),
+                          label: const Text('Enter Password ')
                       ),
                     );
                   }),
 
-              const SizedBox(height: 20,),
+               SizedBox(height: height * 0.1,),
               ElevatedButton.icon(
                   onPressed: () {
                     Utils.snackBar('No Internet connection', context);
