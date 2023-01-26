@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:walletapp/data/models/auth_models.dart';
 import 'package:walletapp/route/route.dart';
 import 'constants/provider/theme_provider.dart';
 
@@ -13,14 +15,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: title,
-      themeMode: ThemeMode.system,
-      theme: MyThemes.lightTheme,
-      darkTheme: MyThemes.darkTheme,
-      initialRoute: '/',
-      onGenerateRoute: RouteGenerator.generateRoute,
+    return MultiProvider(providers: [
+      ChangeNotifierProvider(create: (_)=>AuthViewModels()),
+    ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: title,
+        themeMode: ThemeMode.system,
+        theme: MyThemes.lightTheme,
+        darkTheme: MyThemes.darkTheme,
+        initialRoute: '/',
+        onGenerateRoute: RouteGenerator.generateRoute,
+      ),
     );
   }
 }

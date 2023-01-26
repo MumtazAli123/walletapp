@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:walletapp/data/models/auth_models.dart';
 import 'package:walletapp/utils/utils.dart';
 import 'package:walletapp/widget/custom_button.dart';
 
@@ -31,7 +33,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: _buildAppBar(),
       body: _buildBody(),
@@ -45,6 +46,7 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   _buildBody() {
+    final authViewModel = Provider.of<AuthViewModels>(context);
     final height = MediaQuery.of(context).size.height * 1;
     return SafeArea(
       child: Center(
@@ -86,7 +88,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   }),
 
                SizedBox(height: height * 0.058,),
-                CustomButton(title: 'Submit', onPress: (){
+                CustomButton(
+                  loading: authViewModel.loading,
+                    title: 'Submit', onPress: (){
                   if (_emailController.text.isEmpty){
                     Utils.snackBar('Plz Enter Email', context);
                     Utils.flushBarErrorMessage("Plz Enter Email", context);
@@ -95,7 +99,12 @@ class _LoginScreenState extends State<LoginScreen> {
                   }else if(_passwordController.text.length < 4) {
                     Utils.flushBarErrorMessage("Plz Enter 4 Digit Password", context);
                   }else {
-                     Navigator.pushNamed(context, '/home');
+                    Map data = {
+                      "email": _emailController.text.toString(),
+                      "password": _passwordController.text.toString(),
+                    };
+                    authViewModel.loginApi(data, context);
+
                   }
                 }, icon: Icons.person)
 

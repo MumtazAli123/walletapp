@@ -23,7 +23,7 @@ class CustomButton extends StatelessWidget {
       child: ElevatedButton.icon(
           onPressed: onPress,
           icon: Icon(icon, size: 30),
-          label: loading ? const CircleAvatar(): Text(title, style: const TextStyle(fontSize: 20),)),
+          label: loading ? const CircularProgressIndicator(color: Colors.green,): Text(title, style: const TextStyle(fontSize: 20),)),
     );
   }
 }
