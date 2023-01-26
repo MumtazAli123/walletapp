@@ -9,6 +9,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  ValueNotifier<bool> obsecurePassword = ValueNotifier<bool>(true);
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
@@ -49,15 +50,21 @@ class _LoginScreenState extends State<LoginScreen> {
                 },
               ),
               const SizedBox(height: 20,),
-              TextFormField(
-                controller: passwordController,
-                decoration: const InputDecoration(
-                    prefixIcon: Icon(Icons.lock),
-                    suffixIcon: Icon(Icons.visibility),
-                    border: OutlineInputBorder(),
-                    label: Text('Enter Password ')
-                ),
-              ),
+              ValueListenableBuilder(
+                  valueListenable: obsecurePassword,
+                  builder: (context, value, child ){
+                    return TextFormField(
+                      obscureText: obsecurePassword.value,
+                      controller: passwordController,
+                      decoration: const InputDecoration(
+                          prefixIcon: Icon(Icons.lock),
+                          suffixIcon: Icon(Icons.visibility),
+                          border: OutlineInputBorder(),
+                          label: Text('Enter Password ')
+                      ),
+                    );
+                  }),
+
               const SizedBox(height: 20,),
               ElevatedButton.icon(
                   onPressed: () {
