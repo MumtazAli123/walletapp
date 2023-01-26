@@ -24,6 +24,7 @@ class _LoginScreenState extends State<LoginScreen> {
     _passwordController.dispose();
 
     emailFocusNode.dispose();
+    passwordFocusNode.dispose();
 
   }
 
