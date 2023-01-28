@@ -1,6 +1,6 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:walletapp/widget/floating_button/floating_button.dart';
-import 'package:http/http.dart' as http;
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 
@@ -23,7 +23,9 @@ class _PostScreenState extends State<PostScreen> {
     var getImage = await imagePicker.pickImage(source: ImageSource.gallery);
     setState(() {
       imagePath = File(getImage!.path);
-      print(imagePath);
+      if (kDebugMode) {
+        print(imagePath);
+      }
     });
   }
 

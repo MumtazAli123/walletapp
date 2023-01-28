@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:walletapp/widget/floating_button/floating_button.dart';
-import 'package:http/http.dart' as http;
-import 'package:image_picker/image_picker.dart';
-import 'dart:io';
 
 
 class VideoScreen extends StatefulWidget {
