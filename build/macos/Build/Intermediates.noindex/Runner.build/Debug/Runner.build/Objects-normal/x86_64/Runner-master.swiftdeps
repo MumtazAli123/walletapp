@@ -1,8 +1,8 @@
 version: "Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)"
 options: "7713fec1b1ab87f02e2d7454709beec85b4b8ae88421f30acb254455f40170fc"
 build_start_time: [1674967826, 250314950]
-build_end_time: [1674967826, 446539878]
+build_end_time: [1674967864, 610882043]
 inputs:
-  "/Users/alisindhi/StudioProjects/walletapp/macos/Flutter/GeneratedPluginRegistrant.swift": !private [1674967714, 481988906]
-  "/Users/alisindhi/StudioProjects/walletapp/macos/Runner/AppDelegate.swift": !private [1669220596, 0]
-  "/Users/alisindhi/StudioProjects/walletapp/macos/Runner/MainFlutterWindow.swift": !private [1669220596, 0]
+  "/Users/alisindhi/StudioProjects/walletapp/macos/Flutter/GeneratedPluginRegistrant.swift": [1674967714, 481988906]
+  "/Users/alisindhi/StudioProjects/walletapp/macos/Runner/AppDelegate.swift": [1669220596, 0]
+  "/Users/alisindhi/StudioProjects/walletapp/macos/Runner/MainFlutterWindow.swift": [1669220596, 0]
