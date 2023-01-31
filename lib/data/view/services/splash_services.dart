@@ -6,11 +6,16 @@ import '../user_view_model.dart';
 class SplashServices {
   Future <UserModel> getUserDate()=> UserViewModel().getUser();
   void checkAuthentication(BuildContext context)async{
-    getUserDate().then((value){
-      if (value.token == null || value.token == ""){
-        Navigator.pushNamed(context, '/login');
+    getUserDate().then((value) async {
+      if (value.token == 'null' || value.token == ""){
+       await Future.delayed(const Duration(seconds: 4));
+       Navigator.pushNamed(context, '/login');
+
+
       }else {
-        Navigator.pushNamed(context, "/home");
+        await Future.delayed(const Duration(seconds: 4));
+         Navigator.pushNamed(context, "/home");
+
       }
       
     }).onError((error, stackTrace){

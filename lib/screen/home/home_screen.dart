@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:walletapp/data/view/user_view_model.dart';
 import '../../widget/floating_button/floating_button.dart';
 
 
@@ -12,6 +14,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+
     return  Scaffold(
       appBar: _buildAppBar(),
       body: _buildBody(),
@@ -19,10 +22,14 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
   _buildAppBar(){
+    final userPreference = Provider.of<UserViewModel>(context);
     return AppBar(
       title: const Text('Home'),
       leading: IconButton(onPressed: () {
-        Navigator.pushNamed(context, '/login');
+        userPreference.remove().then((value){
+          Navigator.pushNamed(context, '/login');
+        });
+
       }, icon: const Icon(Icons.lock),),
     );
   }
