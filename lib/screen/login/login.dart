@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:walletapp/data/models/auth_models.dart';
-import 'package:walletapp/utils/utils.dart';
+import 'package:walletapp/data/utils/utils.dart';
 import 'package:walletapp/widget/custom_button.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -92,7 +92,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   loading: authViewModel.loading,
                     title: 'Submit', onPress: (){
                   if (_emailController.text.isEmpty){
-                    Utils.snackBar('Plz Enter Email', context);
+                    Utils.snackBar1('Plz Enter Email', context);
                     Utils.flushBarErrorMessage("Plz Enter Email", context);
                   }else if(_passwordController.text.isEmpty) {
                     Utils.flushBarErrorMessage("Plz Enter Password", context);

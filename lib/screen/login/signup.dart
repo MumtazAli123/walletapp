@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:walletapp/data/models/auth_models.dart';
-import 'package:walletapp/utils/utils.dart';
+import 'package:walletapp/data/utils/utils.dart';
 import 'package:walletapp/widget/custom_button.dart';
 
 class SignupScreen extends StatefulWidget {

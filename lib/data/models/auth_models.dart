@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:walletapp/data/api/network/auth.dart';
-import 'package:walletapp/utils/utils.dart';
+import 'package:walletapp/data/utils/utils.dart';
 
 class AuthViewModels with ChangeNotifier {
   final _myRepo = AuthRepository();
@@ -35,7 +35,7 @@ class AuthViewModels with ChangeNotifier {
     }).onError((error, stackTrace){
       setLoading(false);
       if (kDebugMode) {
-        Utils.flushBarErrorMessage('Email or password wrong', context);
+        Utils.snackBar1('User not found, invalid account',  context);
         print(error.toString());
       }
 

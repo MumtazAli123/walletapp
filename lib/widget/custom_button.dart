@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:walletapp/utils/utils.dart';
+import 'package:walletapp/data/utils/utils.dart';
 
 class CustomButton extends StatelessWidget {
   final String title;

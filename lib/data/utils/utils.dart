@@ -43,4 +43,14 @@ class Utils {
           )),
     );
   }
+  static snackBar1(String message, BuildContext context) {
+    return ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+          backgroundColor: Colors.red,
+          content: Text(
+            message,
+            style: const TextStyle(fontSize: 24, color: Colors.white),
+          )),
+    );
+  }
 }
