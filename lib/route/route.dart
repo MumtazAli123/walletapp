@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:walletapp/data/view/services/splash_view.dart';
 import 'package:walletapp/screen/home/home_screen.dart';
 import 'package:walletapp/screen/login/login.dart';
 import 'package:walletapp/screen/login/signup.dart';
@@ -10,9 +11,9 @@ class RouteGenerator {
   static Route<dynamic>generateRoute(RouteSettings settings){
     switch (settings.name){
       case'/':
+        return MaterialPageRoute(builder: (_)=>const SplashView());
+      case'/login':
         return MaterialPageRoute(builder: (_)=>const LoginScreen());
-      case'/signup':
-        return MaterialPageRoute(builder: (_)=>const SignupScreen());
       case '/home':
         return MaterialPageRoute(builder: (_)=>const HomeScreen());
       case'/post':

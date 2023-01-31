@@ -21,6 +21,9 @@ class _HomeScreenState extends State<HomeScreen> {
   _buildAppBar(){
     return AppBar(
       title: const Text('Home'),
+      leading: IconButton(onPressed: () {
+        Navigator.pushNamed(context, '/login');
+      }, icon: const Icon(Icons.lock),),
     );
   }
   _buildBody(){
